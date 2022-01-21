@@ -22,6 +22,17 @@ pipeline{
             }
           }
         }
+        
+       stage('ping'){
+          steps{
+            script{
+              dir('src'){
+                sh "nc -zv kafka.test.yy 9093"
+              }
+            }
+          }
+        }
+        
       }
     }
   }
