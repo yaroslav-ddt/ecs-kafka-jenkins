@@ -27,7 +27,7 @@ pipeline{
           steps{
             script{
               dir('src'){
-                sh "nc -zv kafka.test.yy 9093"
+                sh "ping kafka.test.yy"
               }
             }
           }
