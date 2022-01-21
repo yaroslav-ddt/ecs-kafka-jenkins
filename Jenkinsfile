@@ -23,15 +23,6 @@ pipeline{
 //           }
 //         }
         
-       stage('ping'){
-          steps{
-            script{
-              dir('src'){
-                sh "ping kafka.test.yy"
-              }
-            }
-          }
-        }
         
       }
     }
