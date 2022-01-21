@@ -1,17 +1,19 @@
-pipeline {
+pipeline{
   agent any 
-  stages {
-    stage('create') {
+  stages{
+    stage('create'){
       parallel{
-        stage {
+        stage('produce'){
           steps{
+            script{
               dir('src'){
                 sh "python3 producer.py"
               }
+            }
           }
         }
 
-        stage {
+        stage('consume'){
           steps{
             script{
               dir('src'){
