@@ -13,15 +13,15 @@ pipeline{
           }
         }
 
-        stage('consume'){
-          steps{
-            script{
-              dir('src'){
-                sh "python3 consumer.py"
-              }
-            }
-          }
-        }
+//         stage('consume'){
+//           steps{
+//             script{
+//               dir('src'){
+//                 sh "python3 consumer.py"
+//               }
+//             }
+//           }
+//         }
         
        stage('ping'){
           steps{
