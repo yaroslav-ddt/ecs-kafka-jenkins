@@ -4,9 +4,7 @@ pipeline{
   stages{
     stage('install boto3'){
       steps{
-        script{
-          sh: "pip install boto3"
-        }
+          sh "pip install boto3"
       }
     }
     stage('create'){
