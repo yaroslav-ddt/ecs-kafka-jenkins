@@ -10,15 +10,15 @@ pipeline{
     }
     stage('create'){
       parallel{
-        stage('produce'){
-          steps{
-            script{
-              dir('src'){
-                sh "python3 producer.py"
-              }
-            }
-          }
-        }
+//         stage('produce'){
+//           steps{
+//             script{
+//               dir('src'){
+//                 sh "python3 producer.py"
+//               }
+//             }
+//           }
+//         }
 
         stage('produce kinesis stream'){
           steps{
@@ -29,11 +29,21 @@ pipeline{
             }
           }
         }
+
+        stage('produce kinesis consumer'){
+          steps{
+            script{
+              dir('src'){
+                sh "python3 kinesis_consumer.py"
+              }
+            }
+          }
+        }
 //         stage('consume'){
 //           steps{
 //             script{
 //               dir('src'){
-//                 sh "python3 consumer.py"
+//                 sh "python3 kinesis_consumer.py"
 //               }
 //             }
 //           }
