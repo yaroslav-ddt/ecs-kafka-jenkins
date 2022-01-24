@@ -2,6 +2,11 @@ pipeline{
   agent any
   
   stages{
+    stage('install boto3'){
+      script{
+        sh: "pip install boto3"
+      }
+    }
     stage('create'){
       parallel{
 //         stage('produce'){
