@@ -28,7 +28,7 @@ while True:
     iterator = aws_kinesis_response['NextShardIterator']
     for record in aws_kinesis_response['Records']:
         if 'Data' in record and len(record['Data']) > 0:
-          producer.send('sample', record['Data'])
+          producer.send('numtest', record['Data'])
           logging.info("Received New Gamer Score: %s", json.loads(record['Data']))
   except KeyboardInterrupt:
     sys.exit()
